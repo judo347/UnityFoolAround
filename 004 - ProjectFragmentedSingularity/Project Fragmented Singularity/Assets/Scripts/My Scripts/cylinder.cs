@@ -10,8 +10,8 @@ public class cylinder : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //print("yo Im a cylinder");
-        moveSpeed = 10f;
-        turnSpeed = 100f;
+        moveSpeed = 8f;
+        turnSpeed = 120f;
 	}
 	
 	// Update is called once per frame
