@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		moveSpeed = 8f;
         turnSpeed = 120f;
+
+        XmlParser parser = new XmlParser(); //TODO TEST
 	}
 	
 	// Update is called once per frame
