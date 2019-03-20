@@ -6,12 +6,33 @@ using UnityEngine;
 
 public class XmlParser {
 
-	Item[] allItems;
+	private static XmlParser instance = null;
+	private static readonly object padlock = new object();
 
-    public XmlParser()
-    {
+	XmlParser()
+	{
 		allItems = loadAllIngameItems(Resources.Load<TextAsset>("allItems"));
-    }
+	}
+
+	public static XmlParser Instance
+	{
+		get
+		{
+			/* The lock keyword ensures that one thread does not enter a critical section of code
+			 * while another thread is in the critical section. If another thread tries to enter 
+			 * a locked code, it will wait, block, until the object is released.*/
+			lock (padlock)
+			{
+				if(instance == null)
+				{
+					instance = new XmlParser();
+				}
+				return instance;
+			}
+		}
+	}
+
+	Item[] allItems;
 
     public List<string> parseFile(TextAsset textAsset)
     {
@@ -67,5 +88,10 @@ public class XmlParser {
 		}*/
 
 		return allItems;
+	}
+
+	public void printTest()
+	{
+		Debug.Log("Test");
 	}
 }

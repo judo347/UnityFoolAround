@@ -20,7 +20,8 @@ public class Player : MonoBehaviour {
 		moveSpeed = 8f;
         turnSpeed = 120f;
 
-        XmlParser parser = new XmlParser(); //TODO TEST
+		//XmlParser parser = new XmlParser(); //TODO TEST
+		XmlParser.Instance.printTest();
 	}
 	
 	// Update is called once per frame
