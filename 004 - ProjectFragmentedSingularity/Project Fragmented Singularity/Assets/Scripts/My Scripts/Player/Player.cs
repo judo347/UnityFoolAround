@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
 		//print(Input.GetAxis("Horizontal")); //1, 0, -1 depending on left or right is pressed.
 		//print(Input.GetAxis("Vertical"));
 
-		Debug.Log(teleportSickness);
+		//Debug.Log(teleportSickness);
 
 		if (teleportSickness > 0)
 			teleportSickness -= Time.deltaTime;
